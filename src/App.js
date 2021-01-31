@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
-function App() {
+import Game from "./components/game/Game";
+import barca from "./images/barca.jpg";
+import columbus from "./images/columbus.bmp";
+import madrid from "./images/madrid.png";
+import maimi from "./images/maimi.bmp";
+
+function App(props) {
+  const fcBarcelona = {
+    name: "FC Barcelona",
+    logoSrc: barca,
+  };
+
+  const columbusCrew = {
+    name: "Columbus Crew",
+    logoSrc: columbus,
+  };
+
+  const realMadrid = {
+    name: "Real Madrid",
+    logoSrc: madrid,
+  };
+
+  const interMaimi = {
+    name: "Inter-Maimi",
+    logoSrc: maimi,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game venue="Maimi Arena" homeTeam={columbusCrew} visitingTeam={interMaimi} />
+      <Game venue="Camp Nou" homeTeam={fcBarcelona} visitingTeam={realMadrid} />
     </div>
   );
 }
